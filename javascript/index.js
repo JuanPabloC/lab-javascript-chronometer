@@ -38,11 +38,23 @@ function printMilliseconds() {
 }
 
 function printSplit() {
-  // ... your code goes here
+  let newLi = document.createElement('li');
+  newLi.innerHTML = chronometer.split();
+  splitsElement.appendChild(newLi);
 }
 
 function clearSplits() {
-  // ... your code goes here
+  //Empty clock prints
+  minDecElement.innerHTML = 0;
+  minUniElement.innerHTML = 0;
+  secDecElement.innerHTML = 0;
+  secUniElement.innerHTML = 0;
+
+  //Empty splits
+  splitsElement.innerHTML = '';
+
+  //reset chronometer
+  chronometer.reset();
 }
 
 function setStopBtn() {
@@ -82,5 +94,9 @@ btnLeftElement.addEventListener('click', () => {
 
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
-  // ... your code goes here
+  if (btnRightElement.innerHTML === 'SPLIT') {
+    printSplit();
+  } else {
+    clearSplits();
+  }
 });
