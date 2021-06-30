@@ -50,6 +50,8 @@ function clearSplits() {
   minUniElement.innerHTML = 0;
   secDecElement.innerHTML = 0;
   secUniElement.innerHTML = 0;
+  milDecElement.innerHTML = 0;
+  milUniElement.innerHTML = 0;
 
   //Empty splits
   splitsElement.innerHTML = '';
