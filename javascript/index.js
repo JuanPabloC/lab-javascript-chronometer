@@ -16,25 +16,26 @@ const splitsElement = document.getElementById('splits');
 function printTime() {
   printMinutes();
   printSeconds();
+  printMilliseconds();
 }
 
 function printMinutes() {
-  let minutes = chronometer.getMinutes();
-
-  minDecElement.innerHTML = minutes - (minutes % 10) / 10;
-  minUniElement.innerHTML = minutes % 10;
+  let minutes = chronometer.computeTwoDigitNumber(chronometer.getMinutes());
+  minDecElement.innerText = minutes[0];
+  minUniElement.innerText = minutes[1];
 }
-
 function printSeconds() {
-  let seconds = chronometer.getSeconds();
-
-  secDecElement.innerHTML = (seconds - (seconds % 10)) / 10;
-  secUniElement.innerHTML = seconds % 10;
+  let seconds = chronometer.computeTwoDigitNumber(chronometer.getSeconds());
+  secDecElement.innerText = seconds[0];
+  secUniElement.innerText = seconds[1];
 }
-
 // ==> BONUS
 function printMilliseconds() {
-  // ... your code goes here
+  let miliseconds = chronometer.computeTwoDigitNumber(
+    chronometer.getMilliseconds()
+  );
+  milDecElement.innerText = miliseconds[0];
+  milUniElement.innerText = miliseconds[1];
 }
 
 function printSplit() {
